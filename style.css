@@ -1,0 +1,814 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Mali',cursive;
+}
+
+body{
+background:#fff3f7;
+}
+
+.page{
+display:none;
+}
+
+.active{
+display:flex;
+}
+
+/* หน้าแรก */
+#loginPage{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.card{
+width:400px;
+background:white;
+border-radius:40px;
+padding:50px;
+text-align:center;
+box-shadow:0 10px 30px rgba(255,105,180,.2);
+}
+
+.lock{
+font-size:50px;
+}
+
+h1{
+color:#ff8cc4;
+margin-top:10px;
+font-size:30px;
+line-height:1.2;
+}
+
+.sub{
+color:#ff9ace;
+margin-top:8px;
+font-size:18px;
+line-height:2;
+}
+
+input{
+width:100%;
+border:none;
+outline:none;
+text-align:center;
+font-size:40px;
+margin-top:25px;
+color:#a5a5a5;
+border-bottom:4px solid #ff9ace;;
+padding-bottom:10px;
+}
+
+input::placeholder{
+    color : #a5a5a5;
+    opacity:1;
+}
+
+#error{
+    display:block;
+    margin-top : 20px;
+    text-align:center;
+    color:#ff9ace;
+    font-size:18px;
+}
+button{
+width:100%;
+margin-top:40px;
+border:none;
+background:#ff8cc4;
+color:white;
+font-size:24px;
+padding:18px;
+border-radius:20px;
+cursor:pointer;
+}
+
+/* หน้าเมนู */
+#menuPage{
+min-height: 100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+}
+
+/* หน้าเมนู */
+#menuPage{
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 20px;
+}
+
+/* หัวข้อ */
+.menu-title{
+text-align: center;
+margin-bottom:40px;
+}
+
+.menu-title p{
+    margin-top:20px;
+    font-size: 18px;
+    color: #ff9ace;
+}
+
+/* กล่องเมนู */
+.menu-list{
+width: 600px;
+max-width: 90%;
+display: flex;
+flex-direction: column;
+gap: 25px;
+margin: 0 auto;
+}
+
+/* รายการเมนู */
+.menu-item{
+background: white;
+height: 90px;
+border-radius: 28px;
+display: flex;
+align-items: center;
+gap: 22px;
+padding: 0 28px;
+box-shadow: 0 8px 25px rgba(255,140,180,.15);
+font-size:20px;
+color : #3b3b3b;
+
+} 
+
+.menu-item span{
+flex:1;
+}
+
+.menu-item b{
+color:#ddd;
+font-size:40px;
+font-weight:300;
+}
+
+.menu-icon{
+width:58px;
+height:58px;
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+}
+
+.pink{background:#ffe1e8;color:#e64b68;}
+.blue{background:#ddecff;color:#4d96d8;}
+.orange{background:#fff0d7;color:#f59e0b;}
+.purple{background:#f2ddff;color:#a855f7;}
+.yellow{background:#fff8b8;color:#eab308;}
+ 
+#memoryPage{
+    display:none;
+}
+
+
+#letterPage{
+display:none;
+min-height:100vh;
+background:#fff3fa;
+padding:40px 20px;
+position:relative;
+overflow:hidden;
+}
+
+.back-btn{
+color:#ff98c3;
+font-size:24px;
+cursor:pointer;
+margin-bottom:30px;
+}
+
+.play-btn{
+position:absolute;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:80px;
+height:45px;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:0;
+line-height:1;
+border:none;
+border-radius:25px;
+background:white;
+color:#ff98c3;
+font-size:24px;
+box-shadow:0 8px 20px rgba(255,120,170,.25);
+cursor:pointer;
+}
+
+.letter-start{
+min-height:70vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.envelope{
+font-size:300px;
+cursor:pointer;
+transition: .3s;
+}
+
+.envelope.shake{
+animation:shake .5s ease;
+}
+
+@keyframes shake{
+0%{transform:rotate(0deg);}
+25%{transform:rotate(-8deg);}
+50%{transform:rotate(8deg);}
+75%{transform:rotate(-5deg);}
+100%{transform:rotate(0deg);}
+}
+
+.letter-content{
+display:none;
+text-align:center;
+margin-top:120px;
+}
+
+.letter-content h1{
+font-size:36px;
+color:#222;
+text-shadow:2px 2px white;
+margin-bottom:35px;
+}
+
+.letter-card{
+width:520px;
+max-width:90%;
+margin:0 auto;
+background:white;
+border-radius:35px;
+padding:40px 30px;
+box-shadow:0 10px 30px rgba(255,120,170,.15);
+}
+
+.letter-card h2{
+color:#ff8cc4;
+font-size:28px;
+margin-bottom:25px;
+}
+
+.letter-card p{
+color:#777;
+font-size:22px;
+line-height:1.8;
+}
+
+.letter-card button{
+margin-top:30px;
+background:none;
+border:none;
+color:#a1a1a1;
+font-size:20px;
+text-decoration:underline;
+cursor:pointer;
+}
+
+#loveRain{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(255,240,248,.95);
+z-index:9999;
+overflow:hidden;
+}
+
+.fold-btn{
+background: none;
+border: none;
+color: #ff7fb2;
+font-size: 18px;
+font-weight: 600;
+text-decoration: underline;
+cursor: pointer;
+}
+
+.fold-btn:hover{
+color: #ffd3eb;
+} 
+
+.fold-btn:hover{
+color: #ff84c6;
+} 
+
+.love-popup{
+position:absolute;
+background:white;
+color:#ff69a6;
+padding:16px 28px;
+border-radius:12px;
+font-size:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+animation:pop .25s ease;
+white-space:nowrap;
+}
+
+@keyframes pop{
+from{
+transform:scale(.5);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
+} 
+
+#gamePage{
+display:none;
+min-height:100vh;
+background:#fff3fa;
+padding:40px 20px;
+}
+
+.game-head{
+display:flex;
+justify-content:space-between;
+align-items:center;
+width:620px;
+max-width:95%;
+margin:0 auto 25px;
+}
+
+.game-head h1{
+color:#ff8cc4;
+font-size:30px;
+}
+
+.game-head p{
+color:#ff8cc4;
+font-size:20px;
+font-weight:600;
+}
+
+
+
+.game-board{
+width:620px;
+max-width:95%;
+margin:0 auto;
+display:grid;
+grid-template-columns:repeat(3, 1fr);
+gap:20px;
+}
+
+
+
+.card-game{
+height:130px;
+background:#ffe2ec;
+border:3px solid #f6bfd1;
+border-radius:22px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:24px;
+color:#ff8cc4;
+font-weight:700;
+cursor:pointer;
+box-shadow:0 8px 18px rgba(255,120,170,.15);
+transition:.25s;
+}
+
+.card-game.open,
+
+.card-game.matched{
+background:white;
+border-color:white;
+transform:scale(1.03);
+}
+
+.card-game.matched{
+pointer-events:none;
+}
+
+.restart-btn{
+width:620px;
+max-width:95%;
+display:block;
+margin:30px auto 0;
+height:65px;
+border:none;
+border-radius:16px;
+background:#ffd8e9;
+color:#ff8cc4;
+font-size:24px;
+font-weight:600;
+cursor:pointer;
+}
+
+.win-popup{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.35);
+z-index:999;
+justify-content:center;
+align-items:center;
+}
+
+.win-box{
+width:420px;
+max-width:85%;
+background:white;
+border-radius:30px;
+padding:35px 25px;
+text-align:center;
+box-shadow:0 10px 35px rgba(0,0,0,.2);
+}
+
+.party{
+font-size:48px;
+}
+
+.win-box h2{
+color:#d94f93;
+font-size:28px;
+margin:15px 0;
+}
+
+.win-box p{
+color:#777;
+font-size:20px;
+line-height:1.7;
+}
+
+.win-box button{
+margin-top:25px;
+width:100%;
+height:55px;
+border:none;
+border-radius:16px;
+background:#ec4899;
+color:white;
+font-size:22px;
+font-weight:700;
+cursor:pointer;
+} 
+
+#loveMasterPage{
+display:none;
+min-height:100vh;
+background:#fff3fa;
+padding:40px 20px;
+position:relative;
+}
+
+.love-master-card{
+width:560px;
+max-width:90%;
+margin:70px auto 0;
+background:white;
+border-radius:35px;
+padding:45px 30px;
+text-align:center;
+box-shadow:0 10px 35px rgba(255,120,170,.18);
+}
+
+.love-icon{
+width:95px;
+height:95px;
+border-radius:50%;
+background:#fff6b8;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:55px;
+margin:0 auto 25px;
+}
+
+.love-master-card h1{
+color:#333;
+font-size:36px;
+margin-bottom:10px;
+}
+
+.love-master-card p{
+color:#c9a5b8;
+font-size:22px;
+margin-bottom:30px;
+}
+
+#startLoveBtn{
+width:230px;
+height:65px;
+border:none;
+border-radius:20px;
+background:#ff8cc4;
+color:white;
+font-size:24px;
+font-weight:700;
+cursor:pointer;
+}
+
+.love-game-area{
+display:none;
+margin-top:30px;
+}
+
+#timerText{
+color:#ff8cc4;
+font-size:48px;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.love-progress{
+width:90%;
+height:24px;
+background:#ffe1ef;
+border-radius:30px;
+margin:0 auto 35px;
+overflow:hidden;
+}
+
+#loveBar{
+width:100%;
+height:100%;
+background:#ff8cc4;
+border-radius:30px;
+transition:.1s linear;
+}
+
+#heartTap{
+width:170px;
+height:170px;
+border-radius:50%;
+border:6px solid #ffc8dd;
+background:#fff3fa;
+font-size:60px;
+cursor:pointer;
+box-shadow:0 8px 25px rgba(255,120,170,.2);
+}
+
+#heartTap:active{
+transform:scale(.92);
+}
+
+.love-result-popup{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.35);
+z-index:9999;
+justify-content:center;
+align-items:center;
+}
+
+.love-result-box{
+width:450px;
+max-width:85%;
+background:white;
+border-radius:35px;
+padding:40px 30px;
+text-align:center;
+}
+
+.love-result-icon{
+font-size:60px;
+color:#eab308;
+}
+
+.love-result-box h2{
+color:#ff8cc4;
+font-size:30px;
+margin-top:10px;
+}
+
+#loveCountText{
+color:#ff8cc4;
+font-size:68px;
+font-weight:900;
+line-height:1;
+margin-top:10px;
+}
+
+.love-result-box span{
+color:#d98ab5;
+font-size:24px;
+}
+
+.love-result-box p{
+color:#777;
+font-size:22px;
+line-height:1.7;
+margin:25px 0;
+}
+
+.love-result-box button{
+width:100%;
+height:60px;
+border:none;
+border-radius:18px;
+background:#ff8cc4;
+color:white;
+font-size:24px;
+font-weight:700;
+cursor:pointer;
+} 
+
+#wheelPage {
+    display: none;
+    min-height: 100vh;
+    background: #fff3fa;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative; /* เพิ่มเพื่อให้ปุ่มกลับอิงตำแหน่ง absolute ได้ */
+}
+
+/* 1. แก้ไขปุ่มกลับหน้าเมนูให้ไปอยู่มุมบนซ้าย */
+.back-btn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+    color: #ff8cc4;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.2s;
+}
+.back-btn:hover {
+    opacity: 0.8;
+}
+
+.wheel-title {
+    color: #ff8cc4;
+    font-size: 32px;
+    margin: 40px 0 30px;
+}
+
+.wheel-wrap {
+    position: relative;
+    width: 420px;
+    height: 420px;
+    max-width: 90vw;
+    max-height: 90vw;
+    margin: 0 auto;
+}
+
+.pointer {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+    z-index: 5;
+}
+
+.wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid white;
+    box-shadow: 0 10px 30px rgba(255,120,170,.25);
+    position: relative;
+    overflow: hidden;
+    transition: transform 4.2s cubic-bezier(.12,.7,.1,1);
+
+    background: conic-gradient(
+        #ff7cab 0deg 60deg,
+        #ffb3c8 60deg 120deg,
+        #ff75a5 120deg 180deg,
+        #ffbfd0 180deg 240deg,
+        #ff7cab 240deg 300deg,
+        #ffb3c8 300deg 360deg
+    );
+}
+
+.wheel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(30deg, transparent 49.5%, rgba(255,255,255,.25) 50%, transparent 50.5%),
+        linear-gradient(90deg, transparent 49.5%, rgba(255,255,255,.25) 50%, transparent 50.5%),
+        linear-gradient(150deg, transparent 49.5%, rgba(255,255,255,.25) 50%, transparent 50.5%);
+}
+
+/* 2. จัดระเบียบโครงสร้างข้อความใหม่ให้อิงจากจุดศูนย์กลาง */
+.wheel-text{
+position:absolute;
+left:50%;
+top:50%;
+width:140px;
+margin-left:-70px;
+color:white;
+font-size:21px;
+font-weight:bold;
+text-align:center;
+transform-origin:center center;
+} 
+
+
+
+/* หมุนข้อความไปตรงกลางช่องสีพอดี (ช่องแรก 0-60deg ตรงกลางคือ 30deg และบวกทีละ 60deg) */
+.t1{
+transform:
+rotate(30deg)
+translateY(-145px)
+rotate(-30deg);
+}
+
+.t2{
+transform:
+rotate(90deg)
+translateY(-145px)
+rotate(-90deg);
+}
+
+.t3{
+transform:
+rotate(150deg)
+translateY(-145px)
+rotate(-150deg);
+}
+
+.t4{
+transform:
+rotate(210deg)
+translateY(-145px)
+rotate(-210deg);
+}
+
+.t5{
+transform:
+rotate(270deg)
+translateY(-145px)
+rotate(-270deg);
+}
+
+.t6{
+transform:
+rotate(330deg)
+translateY(-145px)
+rotate(-330deg);
+} 
+
+.spin-btn {
+    margin-top: 45px;
+    width: 260px;
+    height: 65px;
+    border: none;
+    border-radius: 25px;
+    background: #ff8cc4;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(236,72,153,.3);
+}
+
+.wheel-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.25);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheel-box {
+    width: 400px;
+    max-width: 85%;
+    background: white;
+    border-radius: 30px;
+    padding: 35px 25px;
+    text-align: center;
+}
+
+.wheel-box h2 { color: #ff8cc4; font-size: 30px; }
+.wheel-box p { color: #555; font-size: 28px; margin: 25px 0; }
+.wheel-box button {
+    width: 100%;
+    height: 55px;
+    border: none;
+    border-radius: 18px;
+    background: #ff8cc4;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+}
+

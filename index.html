@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Menu</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- หน้าเข้าสู่ระบบ -->
+<div id="loginPage" class="page active">
+<div class="card">
+<div class="lock">🔐</div>
+<h1> ยืนยันตัวตนคนน่ารัก </h1>
+<p class="sub">ใส่ชื่อคนที่วิวรักที่สุด</p>
+<input type="text" id="nameInput" placeholder="XXXX">
+<button onclick="checkName()">เข้าสู่หัวใจ</button>
+<p id="error"></p>
+</div>
+
+</div>
+
+<!-- หน้าเมนู -->
+<div id="menuPage" class="page">
+<div class="menu-container">
+<div class="menu-title">
+<h1>เมนูหลัก</h1>
+<!-- <p>เลือกดูสิ่งที่อยากรู้ได้เลยนะ</p> -->
+</div>
+<div class="menu-list">
+<div class="menu-item"> 
+<!--- onclick="showMemory()"> ---> 
+<div class="menu-icon pink">♡</div>
+<span>ความทรงจำของเรา</span>
+</div>
+
+<div class="menu-item" onclick="showLetter() ">
+<div class="menu-icon blue">✉</div>
+<span>จดหมายถึงคนน่ารัก</span>
+</div>
+<div class="menu-item" onclick="showMatchGame()">
+<div class="menu-icon yellow">▦</div>
+<span>เกมจับคู่</span>
+</div>
+
+<div class="menu-item"> <!--- onclick="showWheelPage()" ---> 
+<div class="menu-icon purple">⊙</div>
+<span>วงล้อสุ่มรัก</span>
+</div>
+
+<div class="menu-item" onclick="showLoveMaster()">
+<div class="menu-icon yellow">🏆</div>
+<span>Love Master</span>
+</div>
+</div>
+</div>
+</div> 
+
+<!-- หน้าความทรงจำ!->
+<div id="memoryPage" class="page">
+<div class="back-btn" onclick="backToMenu()"> ← กลับไปหน้าเมนู </div>
+<div class="memory-card">
+<img src="img/photo1.png">
+</div>
+<div class="memory-card">
+<img src="img/photo2.png">
+<p>"วันนั้นมีความสุขมาก"</p>
+</div>x 
+</div> --> 
+
+<!-- หน้าจดหมาย -->
+<div id="letterPage" class="page">
+<div class="back-btn" onclick="backToMenu()">← กลับ</div>
+<button class="play-btn" onclick="playMusic()">▶</button>
+<audio id="bgMusic" src="music/song.mp3"></audio>
+<div id="letterStart" class="letter-start">
+<div class="envelope" onclick="openLetter()">✉️</div>
+</div>
+
+<div id="letterContent" class="letter-content">
+<!--- <h1>จดหมายถึงคนน่ารัก</h1> -->
+<div class="letter-card">
+<h2>จดหมายถึงคนน่ารัก </h2>
+
+<p>
+
+ดีใจนะที่ได้เจอตูน เวลาผ่านไปไวมากกก แต่ได้คุยกับเธอแล้วมีความสุขมากจริงๆ 
+เค้าชอบที่เธอเป็นแบบนี้นะ ที่เป็นอยู่ตอนนี้มันก็โอเคแล้ว ขอให้เธอมีความสุขในทุกๆวันนะ อยู่ยิ้มหัวเราะด้วยกันไปนานๆเน้อ
+ลูเยิฟจ่ะ
+
+</p>
+
+<button class="fold-btn" onclick="startLoveRain()">พับเก็บจดหมาย</button>
+</div>
+</div>
+<div id="loveRain"></div>
+</div> 
+
+<!-- หน้าเกมจับคู่ -->
+<div id="gamePage" class="page">
+<div class="back-btn" onclick="backToMenu()">← กลับไปหน้าเมนู</div>
+<div class="game-head">
+<h1>เกมจับคู่หัวใจ</h1>
+<p id="tryText">พยายามเข้า!</p>
+</div>
+<div id="gameBoard" class="game-board"></div>
+<button class="restart-btn" onclick="restartGame()">เริ่มใหม่</button>
+<div id="winPopup" class="win-popup">
+<div class="win-box">
+<div class="party">🎉</div>
+<h2> เย่ แฟนเค้าเก่งมาก</h2>
+<p>
+ตูนเก่งที่สุดเลย<br>
+จับคู่ได้ครบหมดทุกอัน <br>
+</p>
+<button onclick="closeGameWin()"> รักตูน </button>
+</div>
+</div>
+
+</div> 
+
+<!-- หน้า Love Master -->
+<div id="loveMasterPage" class="page">
+<div class="back-btn" onclick="backToMenu()">← กลับไปหน้าเมนู</div>
+<div class="love-master-card">
+<div class="love-icon">⚡</div>
+<h1>Love Master</h1>
+<p>กดรัวหัวใจให้เต็มใน 5 วินาที!</p>
+<button id="startLoveBtn" onclick="startLoveMaster()">
+เริ่ม !
+</button>
+<div id="loveGameArea" class="love-game-area">
+<div id="timerText">10</div>
+<div class="love-progress">
+<div id="loveBar"></div>
+</div>
+<button id="heartTap" onclick="tapHeart()">❤️</button>
+</div>
+</div>
+<div id="loveResultPopup" class="love-result-popup">
+<div class="love-result-box">
+<div class="love-result-icon">⚡</div>
+<h2>จบเกมแล้ว!</h2>
+<div id="loveCountText">0</div>
+<span>ครั้ง</span>
+<p>
+ได้เยอะมาก<br>
+เก่งจังแฟนเค้าเก่งที่สุด
+</p>
+<button onclick="finishLoveMaster()"> รักตูน </onclick=>
+</div>
+</div>
+</div> 
+
+<!-- หน้าวงล้อ -->
+<div id="wheelPage" class="page">
+<div class="back-btn" onclick="backToMenu()">← กลับไปหน้าเมนู</div>
+<h1 class="wheel-title"> ทำอะไรกันดีี </h1>
+<div class="wheel-wrap">
+<div class="pointer">📍</div>
+
+<div id="wheel" class="wheel">
+<div class="wheel-text t1"> เล่นเกมด้วยกันน </div>
+<div class="wheel-text t2"> Deep talk </div>
+<div class="wheel-text t3"> ตูนเล่านิทานให้ฟัง </div>
+<div class="wheel-text t4"> เล่นrobloxด้วยกัน </div>
+<div class="wheel-text t5"> นอนคุยกันน </div>
+<div class="wheel-text t6"> รักตูน </div>
+</div>
+</div>
+
+<button class="spin-btn" onclick="spinWheel()"> กดสุ่มเลย </button>
+
+<div id="wheelPopup" class="wheel-popup">
+<div class="wheel-box">
+<h2>ได้แล้วว 💖</h2>
+<p id="wheelResult">---</p>
+<button onclick="closeWheelPopup()">โอเคเลย!</button>
+</div>
+
+</div>
+
+</div> 
+
+</section>
+<script src="script.js"></script>
+</body>
+
+</html> 
+
